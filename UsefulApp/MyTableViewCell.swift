@@ -9,6 +9,11 @@ import UIKit
 
 class MyTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var labelOutlet: UILabel!
+    
+    @IBOutlet weak var addButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
