@@ -1,42 +1,41 @@
-//
-//  ViewController.swift
-//  UsefulApp
-//
-//  Created by EVAN MEYER on 10/28/24.
-//
-
 import UIKit
 
 class AppData{
     static var cart = [""]
-    static var list = [""]
-    
+    static var ingredients = [""]
+    static var recipes = [""]
 }
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-  
-
-    @IBOutlet weak var tableViewCell: UITableView!
+    
+    @IBOutlet weak var textFieldOutlet: UITextField!
+    
+    @IBOutlet weak var tableViewOutlet: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        tableViewOutlet.delegate = self
+        tableViewOutlet.dataSource = self
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return AppData.cart.count
+        return AppData.ingredients.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! MyTableViewCell
-        cell.textLabel?.text = AppData.cart[indexPath.row]
-       
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myTableViewCell") as! myTableViewCell
+        cell.labelOutlet?.text = AppData.ingredients[indexPath.row]
+        
                return cell
-
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(AppData.cart[indexPath.row])
     }
     
-
+    
+    @IBAction func AddFoodAction(_ sender: UIButton) {
+        var blah = textFieldOutlet.text!
+        AppData.ingredients.append(blah)
+        tableViewOutlet.reloadData()
+    }
+    
+    
+   
 }
 

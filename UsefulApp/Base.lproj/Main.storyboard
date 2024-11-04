@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="159" width="393" height="610"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="xjN-vj-TJf" customClass="MyTableViewCell" customModule="UsefulApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="xjN-vj-TJf" customClass="myTableViewCell" customModule="UsefulApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xjN-vj-TJf" id="XdE-rC-RYL">
@@ -41,31 +41,46 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BW4-Fn-M1Z">
-                                                    <rect key="frame" x="326" y="4" width="59" height="35"/>
+                                                    <rect key="frame" x="326" y="4" width="67" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="ADD"/>
+                                                    <connections>
+                                                        <action selector="buttonAction:" destination="xjN-vj-TJf" eventType="touchUpInside" id="A1w-Uu-dQu"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="addButton" destination="BW4-Fn-M1Z" id="zEz-ec-dcm"/>
-                                            <outlet property="labelOutlet" destination="cir-a4-ywQ" id="uPV-8u-1Ea"/>
+                                            <outlet property="labelOutlet" destination="cir-a4-ywQ" id="pbL-Yv-OIl"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VR-gk-L6u">
-                                <rect key="frame" x="226" y="92" width="101" height="35"/>
+                                <rect key="frame" x="180" y="92" width="101" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Add to list"/>
+                                <connections>
+                                    <action selector="AddFoodAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vq5-C4-lGv"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NzY-C4-t1o">
-                                <rect key="frame" x="33" y="92" width="156" height="34"/>
+                                <rect key="frame" x="16" y="92" width="156" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFM-Nd-05u">
+                                <rect key="frame" x="311" y="92" width="57" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Find"/>
+                                <connections>
+                                    <segue destination="ED8-vd-Mmz" kind="show" id="HHQ-Uq-Q53"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
@@ -80,12 +95,41 @@
                     <tabBarItem key="tabBarItem" title="" id="OX2-f1-Tr8"/>
                     <navigationItem key="navigationItem" id="qJm-kg-kud"/>
                     <connections>
-                        <outlet property="tableViewCell" destination="nLW-qu-ciC" id="gUd-0e-cAs"/>
+                        <outlet property="tableViewOutlet" destination="nLW-qu-ciC" id="gVk-rG-g6p"/>
+                        <outlet property="textFieldOutlet" destination="NzY-C4-t1o" id="MHL-JD-IvI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1881.679389312977" y="3.5211267605633805"/>
+        </scene>
+        <!--Cart View Controller-->
+        <scene sceneID="1jI-ep-R4S">
+            <objects>
+                <viewController id="ED8-vd-Mmz" customClass="CartViewController" customModule="UsefulApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9oG-0J-ojf">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YLg-hf-LUh">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5xe-ht-m9O"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5xe-ht-m9O" firstAttribute="bottom" secondItem="YLg-hf-LUh" secondAttribute="bottom" id="QSk-G4-azV"/>
+                            <constraint firstItem="YLg-hf-LUh" firstAttribute="leading" secondItem="5xe-ht-m9O" secondAttribute="leading" id="TRE-Je-vdD"/>
+                            <constraint firstItem="5xe-ht-m9O" firstAttribute="trailing" secondItem="YLg-hf-LUh" secondAttribute="trailing" id="Ych-7q-U4L"/>
+                            <constraint firstItem="YLg-hf-LUh" firstAttribute="top" secondItem="5xe-ht-m9O" secondAttribute="top" id="p7c-hc-WwZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Jcu-Di-A8u"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8of-uq-uYv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2668" y="4"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="a3L-8d-uir">
