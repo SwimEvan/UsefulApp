@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D3315A452CD90BAA0097E22E /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		D3315A452CD90BAA0097E22E /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		D3B5026B2CCFC59D00CDCB61 /* UsefulApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UsefulApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B502842CCFC59F00CDCB61 /* UsefulAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UsefulAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B5028E2CCFC59F00CDCB61 /* UsefulAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UsefulAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };

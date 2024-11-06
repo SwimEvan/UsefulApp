@@ -11,9 +11,7 @@ class myTableViewCell: UITableViewCell {
 
     @IBOutlet weak var labelOutlet: UILabel!
     
-    @IBAction func buttonAction(_ sender: UIButton) {
-       
-    }
+     
     
   
 
