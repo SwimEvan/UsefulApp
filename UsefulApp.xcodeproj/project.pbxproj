@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D3315A462CD90BAA0097E22E /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3315A452CD90BAA0097E22E /* CartViewController.swift */; };
+		D34347EC2CE415E1007D6990 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34347EB2CE415E1007D6990 /* RecipeDetailViewController.swift */; };
+		D34348092CE43BE0007D6990 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34348082CE43BE0007D6990 /* FavoriteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		D3315A452CD90BAA0097E22E /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		D34347EB2CE415E1007D6990 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
+		D34348082CE43BE0007D6990 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		D3B5026B2CCFC59D00CDCB61 /* UsefulApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UsefulApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B502842CCFC59F00CDCB61 /* UsefulAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UsefulAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B5028E2CCFC59F00CDCB61 /* UsefulAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UsefulAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +97,8 @@
 		D3B502622CCFC59D00CDCB61 = {
 			isa = PBXGroup;
 			children = (
+				D34348082CE43BE0007D6990 /* FavoriteViewController.swift */,
+				D34347EB2CE415E1007D6990 /* RecipeDetailViewController.swift */,
 				D3315A452CD90BAA0097E22E /* CartViewController.swift */,
 				D3B5026D2CCFC59D00CDCB61 /* UsefulApp */,
 				D3B502872CCFC59F00CDCB61 /* UsefulAppTests */,
@@ -256,6 +262,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3315A462CD90BAA0097E22E /* CartViewController.swift in Sources */,
+				D34347EC2CE415E1007D6990 /* RecipeDetailViewController.swift in Sources */,
+				D34348092CE43BE0007D6990 /* FavoriteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,7 +29,12 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         let ingredients = getIngredientsForRecipe(at: indexPath.row)
         
         
-        let accuracy = calculateAccuracy(for: ingredients)
+        let accuracy: Double
+               if ingredients.isEmpty {
+                   accuracy = 0.0 // or some default value
+               } else {
+                   accuracy = calculateAccuracy(for: ingredients)
+               }
         
        
         let ingredientsText = ingredients.joined(separator: ", ")
@@ -74,5 +79,33 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return accuracy
     }
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+            // Create the "Add to Cart" action
+            let addToCartAction = UIContextualAction(style: .normal, title: "Favorite") { (action, view, completionHandler) in
+                // Get the ingredient that corresponds to this row
+                let recipe = AppData.recipes[indexPath.row]
+                // Add the ingredient to the cart
+                AppData.favoriteRecipes.append(recipe)
+                AppData.favoriteInstructions.append(AppData.instructions[indexPath.row])
+            
+                
+                completionHandler(true)
+                print("Favorite Recipes: \(AppData.favoriteRecipes)")
+            }
+            
+            
+            addToCartAction.backgroundColor = .systemGreen
+            
+        
+            return UISwipeActionsConfiguration(actions: [addToCartAction])
+        }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        AppData.num = indexPath.row
+        let selectedRecipeIndex = indexPath.row
+        AppData.hi = 0
+        performSegue(withIdentifier: "detailVC", sender: indexPath)
+                    }
+        
 }
 

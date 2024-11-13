@@ -1,6 +1,10 @@
 import UIKit
 
 class AppData{
+    static var favoriteInstructions = [String]()
+    static var hi = 0
+    static var num = 10
+    static var favoriteRecipes = [String]()
     static var ingredientsByRecipe = [
         "spaghetti", "ground beef", "tomato sauce", "onion", "garlic", "olive oil", "salt", "pepper", "",
         "chicken", "curry powder", "coconut milk", "onion", "garlic", "ginger", "vegetable oil", "salt", "",
